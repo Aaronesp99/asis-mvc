@@ -13,6 +13,29 @@ class Practicante
     public function Practicante(){
         
     }
+
+    public function __construct($dni = null,$apePaterno = null,$apeMaterno = null,$nombre = null,$fecNacimiento = null,$sexo = null,$codTurno_fk = null,$descripcion = null){
+        $this->dni=$dni;
+        $this->apePaterno=$apePaterno;
+        $this->apeMaterno=$apeMaterno;
+        $this->nombre=$nombre;
+        $this->fecNacimiento=$fecNacimiento;
+        $this->sexo=$sexo;
+        $this->codTurno_fk=$codTurno_fk;
+        $this->descripcion=$descripcion;
+    }
+
+
+    public function registrarPracticante()){
+        $cn=new Cn();
+        $mysqli=$cn->cn;
+        $stm=$mysqli->prepare("call sp_asistencia_regPracticante(?,?,?,?,?,?,?,?)");
+        $stm->bind_param("sssssss",$this->dni,$this->apePaterno,$this->apeMaterno,$this->nombre,
+                        $this->fecNacimiento,$this->sexo,$this->codTurno_fk,$this->descripcion);
+        $stm->execute();
+        
+    }
+
     public function verPracticantes(){
         $cn=new Cn();
         $mysqli=$cn->cn;
@@ -38,6 +61,7 @@ class Practicante
         }
         return true;
     }
+
     public function HorarioDia(){
         $cn=new Cn();
         $mysqli=$cn->cn;
