@@ -1,0 +1,38 @@
+body{
+    margin: 0;
+    background: #1c546e;
+    overflow: auto;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h2{
+    text-align: center;
+    font-size: 45px;
+    font-family: serif;
+}
+
+form{
+    position: absolute;
+    background: #FBFCFC;
+    padding: 40px;
+    border-radius: 7px;
+    box-shadow: 0px 0px 10px 0px #000;
+}
+
+.input{
+    margin: auto;
+    display: -ms-flexbox;
+    display: flex;
+    width: 70%;
+    margin-bottom: 15px;
+    padding: 6px;
+}
+
+#btn-sub{
+    margin: auto;
+    width: 20%;
+}

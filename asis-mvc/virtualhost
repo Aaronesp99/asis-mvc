@@ -1,0 +1,10 @@
+<VirtualHost *:8080>
+ DocumentRoot D:\htdocs_aaron
+ ServerName aaron.local
+</VirtualHost>
+
+<Directory "D:\htdocs_aaron">
+    Options Indexes FollowSymLinks Includes ExecCGI
+    AllowOverride All
+    Require all granted
+</Directory>
